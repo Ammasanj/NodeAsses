@@ -1,0 +1,138 @@
+
+ class JSX1 extends React.Component{
+	constructor(props){
+    	super(props);
+      this.state={
+      		num1:props.num1,
+          num2:props.num2,
+          
+      }
+      
+    }
+    componentWillReceiveProps(nextProps){
+    	console.log(nextProps)
+    	this.state={
+      		num1:nextProps.num1,
+          num2:nextProps.num2,
+          
+      }
+    }
+    change1(){
+    	let a=Number(this.refs.num1.value);
+    	this.props.change1(a)
+    }
+    change2(){
+    	let a=Number(this.refs.num2.value);
+    	this.props.change2(a)
+    
+    }
+    render(){
+    	return(
+      		<div>
+          <div> Num1 - 
+      		  <input type="text" ref="num1" value={this.state.num1} onChange={this.change1.bind(this)}></input></div>
+            
+  <div> Num2 - 
+      		  <input type="text" ref="num2"  value={this.state.num2}   onChange={this.change2.bind(this)}></input></div>
+           
+           </div>
+       )
+    }
+}
+
+ class JSX2 extends React.Component{
+	constructor(props){
+    	super(props);
+      this.state={
+      		operatorSelected:''
+          
+      }
+      
+    }
+    render(){
+    	return(
+      		<div>
+             <button onClick={this.props.add}>Add</button>
+             <button onClick={this.props.sub}>Sub</button>
+      		</div>
+       )
+    }
+}
+
+ class JSX3 extends React.Component{
+	constructor(props){
+    	super(props);
+      this.state={
+      		result:props.result
+          
+      }
+      
+    }
+     componentWillReceiveProps(nextProps){
+    	console.log(nextProps)
+    	this.state={
+      		result:nextProps.result,
+          
+      }
+    }
+    render(){
+    	return(
+      		<div>
+            <div>{this.state.result}</div>
+           <button onClick={this.props.clear}>Clear</button>
+      		</div>
+       )
+    }
+}
+class JSXParent extends React.Component{
+		constructor(props){
+    	super(props);
+      this.state={
+      		num1:0,
+          num2:0,
+          operatorSelected:'',
+          result:0
+      }
+      
+    }
+    change1(val){
+    	this.setState({
+      	num1:val
+      })
+    }
+    change2(val){
+    	this.setState({
+      	num2:val
+      })
+    }
+    add(){
+    	this.setState({
+      	result:this.state.num1+this.state.num2
+      })
+    }
+    sub(){
+    		this.setState({
+      	result:this.state.num1-this.state.num2
+      })
+    }
+    clear(){
+    	this.setState({
+      	num1:0,
+        num2:0,
+        result:0
+      })
+    }
+    render(){
+    return(
+      <div>
+        <JSX1 num1={this.state.num1}
+        num2={this.state.num2} change1={this.change1.bind(this)} change2={this.change2.bind(this)}/>
+    	  
+    	  <JSX2 operatorSelected={this.state.operatorSelected} add={this.add.bind(this)} sub={this.sub.bind(this)}/>
+        
+    	  <JSX3 result={this.state.result} clear={this.clear.bind(this)}/>
+    	</div>
+    )
+    }
+}
+ReactDOM.render(<JSXParent/>,document.getElementById('app')); 

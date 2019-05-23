@@ -1,0 +1,76 @@
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+
+var input_stdin = "";
+var input_stdin_array = "";
+var input_currentline = 0;
+
+process.stdin.on('data', function (data) {
+    input_stdin += data;
+});
+
+var output = [];
+function add(M1,M2){
+
+if (M1.length != M2.length) {
+			return false
+}
+
+
+
+     M1.map((row,index)=>{
+        			row_item=[];
+        		    row.map((item,i)=>{
+                    row_item.push(parseInt(item)+ parseInt(M2[index][i]))
+    });
+    
+  output.push(row_item)
+
+});
+
+
+}
+
+function Write(A){
+
+A.map((ele)=>{
+ele.map((item)=>{
+ process.stdout.write(item + " ")
+})
+process.stdout.write("\n")
+})
+
+}
+
+
+process.stdin.on('end', function () {
+    input_stdin_array = input_stdin.split("\n");
+	
+	//Write code here
+	
+	let matrix_1_len = input_stdin_array[0].split(" "),
+	    matrix_1 =[] ,matrix_2 =[];
+	 for(var i=1; i<=matrix_1_len[0];i++){
+	     var item = [];
+	     
+	     input_stdin_array[i].split(" ").map((ele) =>{
+	        item.push(ele);
+	     })
+	     matrix_1.push(item);
+	 }
+	 var count = parseInt(matrix_1_len[0])+1;
+     var matrix_2_len = input_stdin_array[count].split(" ");
+     
+     if(matrix_1_len[0] === matrix_2_len[0] && matrix_1_len[1] === matrix_2_len[1]){
+        for(var j=(count + 1); j{
+                item.push(ele)
+            });
+            
+            matrix_2.push(item)
+        } 
+     }
+	 
+	 add(matrix_1,matrix_2)
+	 Write(output);   
+    //process.stdout.write(""+output+"\n");
+});

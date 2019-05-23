@@ -1,0 +1,71 @@
+Aum Amma
+Node :
+	CMD: utility used to type the commands to computer rather than clicking
+        Arguments: value that gives to the program that affect thow it runs
+	Machine code: computer understandable language spoken by microprocessor[microprocessor -->Machine lanuage..> Assembly language..>c,c++
+        
+        V8 nodejs engine written in c++, it convert javascrits to machine code
+	ECMASCRIPT: standerd for javascript
+	javascript engine: c++ program that convert javscript to computer processor can understand
+	
+	Server and client architcture
+	First class functions : use functions like other types strings,number
+	inheritance: one object access properties and  methods of another object
+	Function Constructors: Normal function used to create the object,the "this" keyword points to the newly created object and new object returned automaticaly by the function
+	Primitive Datatype: Type of data that represent single value(number,string)
+	scope: where in code you have access to a particular variable or function 
+
+	Reveling module pattern: Exposing the only methods and properties you want via returned objects.A clean and common way of protect and structure the code with in module.
+	Mutate : To change something[ex: adding a method or properties to an object
+	Variable Typing: Assign a number to a variable and then the same variable can be assigned to a string
+
+	Events: System events: c++ core: libuv: A file is open, received data from internet..:closer to the lower level
+		custom Events: javascriptcore : Event Emitter
+		
+		Event listener: piece of code(function ) that responds to an event
+
+
+
+
+Aum Amma
+When we use new operator,
+1)create a this object
+2)point to current object
+2)return the object without using the explicit 'return'
+
+Factory function
+constructor function
+object literals
+Every object has a constructor property that referes the functon that used to create the object
+
+Primitive datatypes are copiying the values where as Arrays, Object and Functions are copiying the reference(memory address)
+
+
+For enumarating the keys in an object....>
+for in, 
+get all the keys in an object....>
+Object.keys
+to check whether a key exists in an Object...>
+'key' in 'Object'
+
+
+
+Abstraction: hide the details and exposeonly essentials
+
+
+Instance member vs prototypical member:
+hasOwnProperty,Object.keys return Instance member;
+for in iterate over prototypical member
+
+Object.assign...>used to copy one object to another
+
+NPM is a tool that used to install the 3rd party libraries and tools.
+
+
+
+Ammasanju@4288
+TCS
+
+
+
+

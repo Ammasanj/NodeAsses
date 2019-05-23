@@ -1,0 +1,27 @@
+
+
+Aum Amma
+
+
+1) Life cycle method
+
+
+2) Architecture of node
+
+
+3) Mock interview
+
+
+ES6
+
+Arrow functions
+
+
+
+
+
+Node is a run time environment for executing javascript code
+
+it is higly scalable becouse of its asynchrous nature
+
+node is ideal for more IO intensive applications.[node using a single thread for handling multiple request, one request need some data from  db,or read some files etc, single thread hand over the job and ready to accept the next request .once the job done it will give the message to EVENT QUE and node is continuouly monotoring the q]
